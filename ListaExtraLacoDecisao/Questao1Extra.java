@@ -7,12 +7,20 @@ public class Questao1Extra {
 meses e dias e mostre-a expressa apenas em dias.*/
 	public static void main(String[] args) {
 		
-		int idade,dias,mes,ano;
+		int idade,dias,meses,ano,total;
 		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("\nDigite sua idade em anos: ");
-
+		ano = leia.nextInt();
+		System.out.println("\nDigite sua idade em meses: ");
+		meses = leia.nextInt();
+		System.out.println("\nDigite sua idade em dias: ");
+		dias = leia.nextInt();
+		
+		total = ano * 365 + meses * 30 + dias;
+		
+		System.out.println("\nSua idade em dias: "+total);
 	}
 
 }
