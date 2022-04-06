@@ -14,94 +14,100 @@ e o resultado da adição da constante deve ser armazenado na própria matriz.*/
 
 	public static void main(String[] args) {
 		
-		int[][] m1 = new int[2][2];
-		int[][] m2 = new int[2][2];
-		int[][] m3 = new int[2][2];
-		int l, c, op, a;
-		
+		float[][] matriz1 = new float[2][2];
+		float[][] matriz2 = new float[2][2];
+		float[][] matriz3 = new float[2][2];
+		int i,j,op;
+		float numero;
 		Scanner leia = new Scanner(System.in);
 		
-		for(l=0;l<2;l++)
+		for(i=0;i<2;i++)
 		{
-			for(c=0;c<2;c++) 
+			for(j=0;j<2;j++)
 			{
-				System.out.println("\nDigite um valor: ");
-				m1[l][c] = leia.nextInt();
-			}
-		}
-		for(l=0;l<2;l++)
-		{
-			for(c=0;c<2;c++) 
-			{
-				System.out.println("\nDigite um valor: ");
-				m2[l][c] = leia.nextInt();
-			}
-		}
-		System.out.println("\n-----------------MENU OPÇÕES-----------------");
-		System.out.println("\n(1) somar as duas matrizes");
-		System.out.println("\n(2) subtrair a primeira matriz da segunda");
-		System.out.println("\n(3) adicionar uma constante as duas matrizes");
-		System.out.println("\n(4) imprimir as matrizes ");
-		System.out.println("\n----------------------------------------------");
-		System.out.println("\nDigite sua opção: ");
-		op = leia.nextInt();
-		
-		if(op==1)
-		{
-			for(l=0;l<2;l++)
-			{
-				for(c=0;c<2;c++) 
-				{
-					m3[l][c] = m1[l][c] + m2[l][c];
-					System.out.println("\nSoma das matrizes: "+m3[l][c]);
-				}
-			}
-		}
-		if(op==2)
-		{
-			for(l=0;l<2;l++)
-			{
-				for(c=0;c<2;c++) 
-				{
-					m3[l][c] = m1[l][c] - m2[l][c];
-					System.out.println("\nDiferença das matrizes: "+m3[l][c]);
-				}
-			}
-		}
-		if(op==3)
-		{
-			System.out.println("\nDigite o valor da constante: ");
-			a = leia.nextInt();
-			m1[0][0] = a;
-			m2[0][0] = a;
-			System.out.println("\nAdicionando constante...");
-			for(l=0;l<2;l++)
-			{
-				for(c=0;c<2;c++) 
-				{
-					System.out.println("\nMatriz 1: "+m1[l][c]);
-					System.out.println("\nMatriz 2: "+m2[l][c]);
-					
-				}
-			}
-		}
-		if(op==4)
-		{
-			for(l=0;l<2;l++)
-			{
-				for(c=0;c<2;c++) 
-				{
-					System.out.println("\nMatriz 1");
-					System.out.println(m1[l][c]);
-					System.out.println("\nMatriz 2");
-					System.out.println(m2[l][c]);
-					System.out.println("\nMatriz Resultado");
-					System.out.println(m3[l][c]);
-					
-				}
+				System.out.println("\nEntre com o valor da Matriz1: ");
+				matriz1[i][j] = leia.nextFloat();
+				System.out.println("\nEntre com o valor da Matriz2: ");
+				matriz2[i][j] = leia.nextFloat();
 			}
 		}
 		
+		do
+		{
+			System.out.println("\n\t\tMenu de opções");
+			System.out.println("\n1-Somar as duas matrizes.");
+			System.out.println("\n2-Subtrair a primeira matriz da segunda.");
+			System.out.println("\n3-Adicionar uma constante as duas matrizes.");
+			System.out.println("\n4-Imprimir as matrizes.");
+			System.out.println("\n0-Sair do programa!!!.");
+			System.out.println("\nDigite sua opção: ");
+			op = leia.nextInt(); //8 0
+			switch(op)
+			{
+			case 1:
+				for(i=0;i<2;i++)
+				{
+					for(j=0;j<2;j++)
+					{
+						matriz3[i][j] = matriz1[i][j] + matriz2[i][j];
+						System.out.println("\nSoma das matrizes: "+matriz3[i][j]);
+					}
+				}
+				break;
+			case 2:
+				for(i=0;i<2;i++)
+				{
+					for(j=0;j<2;j++)
+					{
+						matriz3[i][j] = matriz2[i][j] - matriz1[i][j];
+						System.out.println("\nSubtração das matrizes: "+matriz3[i][j]);
+					}
+				}
+				break;
+			case 3:
+				System.out.println("\nEntre com o valor da constante: ");
+				numero = leia.nextFloat();
+				for(i=0;i<2;i++)
+				{
+					for(j=0;j<2;j++)
+					{
+						matriz1[i][j] += numero;
+						matriz2[i][j] += numero;
+						System.out.println("\nMatriz1: "+matriz1[i][j]);
+						System.out.println("\nMatriz2: "+matriz2[i][j]);
+					}
+				}
+				break;
+			case 4:
+				for(i=0;i<2;i++)
+				{
+					for(j=0;j<2;j++)
+					{
+						
+						System.out.println("\nMatriz1: "+matriz1[i][j]);
+						System.out.println("\nMatriz2: "+matriz2[i][j]);
+					}
+				}
+				break;
+				default:
+					if(op<0 || op>4)
+					{
+						System.out.println("\nOpção inválida!!!");
+					}
+					else if(op==0)
+					{
+					System.out.println("\nMuito obrigado por usar o nosso software...");
+					}
+					else
+					{
+						System.out.println("\nVamos utilizar novamente o nosso sistema...");
+					}
+			}
+			
+			
+		}
+		while(op!=0);
+
 
 	}
 
