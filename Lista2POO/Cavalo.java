@@ -2,22 +2,32 @@ package Lista2POO;
 
 public class Cavalo extends Animal {
 	
-	private String correr;
-	
-	public Cavalo (String nome,int idade,String som,String correr)
+	public Cavalo()
 	{
-		super(nome,idade,som);
-		this.correr = correr;
-	}
-
-	public String getCorrer() {
-		return correr;
-	}
-
-	public void setCorrer(String correr) {
-		this.correr = correr;
+		super("Tipo animal: Cavalo");
 	}
 	
+	@Override
+	public void nome(String nomeAnimal)
+	{
+		System.out.println("\nNome do cavalo: "+nomeAnimal);
+	}
 	
+	@Override
+	public void idade(int idadeAnimal)
+	{
+		System.out.println("\nIdade: "+idadeAnimal);
+	}
+	
+	@Override
+	public void som(String somAnimal)
+	{
+		System.out.println("\nSom que seu cavalo emite: "+somAnimal);
+	}
+	
+	public void Corre()
+	{
+		System.out.println("\nUma das características do cavalo é correr!!!");
+	}
 
 }

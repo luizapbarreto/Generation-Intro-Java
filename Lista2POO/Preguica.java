@@ -1,23 +1,34 @@
 package Lista2POO;
 
-public class Preguica extends Animal{
+public class Preguica extends Animal {
 	
-	private String subirArvore;
-	
-	public Preguica(String nome,int idade,String som,String subirArvore)
+	public Preguica()
 	{
-		super(nome,idade,som);
-		this.subirArvore = subirArvore;
-	}
-
-	public String getSubirArvore() {
-		return subirArvore;
-	}
-
-	public void setSubirArvore(String subirArvore) {
-		this.subirArvore = subirArvore;
+		super("Tipo animal: Preguiça");
 	}
 	
+	@Override
+	public void nome(String nomeAnimal)
+	{
+		System.out.println("\nNome da preguiça: "+nomeAnimal);
+	}
 	
+	@Override
+	public void idade(int idadeAnimal)
+	{
+		System.out.println("\nIdade: "+idadeAnimal);
+	}
+	
+	@Override
+	public void som(String somAnimal)
+	{
+		System.out.println("\nSom que a preguiça emite: "+somAnimal);
+	}
+	
+	public void subirArvore()
+	{
+		System.out.println("\nUma das características da preguiça é subir em árvores!!!");
+	}
+
 
 }
