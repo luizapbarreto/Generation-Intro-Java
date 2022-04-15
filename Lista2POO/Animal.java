@@ -20,5 +20,5 @@ private String tipoAnimal;
 	public void setTipoAnimal(String tipoAnimal) {
 		this.tipoAnimal = tipoAnimal;
 	}
-
+	
 }
